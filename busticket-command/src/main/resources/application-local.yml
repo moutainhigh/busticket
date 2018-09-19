@@ -1,0 +1,75 @@
+axon:
+  distributed:
+    jgroups:
+      configuration-file: jgroups/udp.xml
+spring:
+  rabbitmq:
+    host: rabbit-local
+
+server:
+  port: 80
+  url: http://rkdev.ynydhlw.com
+
+grpc:
+  client:
+    busticket-query:
+      server-host: localhost
+      enable-keep-alive: true
+      keep-alive-delay: 5
+
+#支付配置
+pay:
+  config:
+    #支付请求链接地址
+    #支付请求链接地址
+    requestUrl: ${server.url}
+    #支付请求方法
+    payMethod: /bait/pay/command/createPay
+    #退款请求方法
+    refundMethod: /bait/pay/command/createRefund
+    #回调通知地址
+    backNotifyUrl: ${server.url}/bait/busticket/bus/pay/notice
+    #支付后前端跳转地址
+    frontUrl: https://www.baidu.com
+    #版本号
+    version: 1.0
+    #应用id
+    appID: 10000168
+    #业务平台编号
+    storeId: 9990001860937512
+    #商户号
+    payStoreId: 888000100006503
+
+    #每张车票服务费
+    serviceRate: 3
+
+    refundNoticeUrl: ${server.url}/bait/busticket/bus/refund/notice
+
+    devMode: false
+
+#车票第三方接口
+app:
+  bus:
+    isTest: 1
+    username: test_10086
+    key: 123456
+    keyFilepath: /pkcs8_rsa_private_key.pem
+    desKey: '*&^$%#(&'
+    host: http://v2.ynpay.cc/api/rest/
+    session: session
+    station: bus/station
+    origin: bus/origin
+    order: bus/order
+    classes: bus/class
+    backUrl: http://rkdev.ynydhlw.com/bait/busticket/bus/insurance/callback
+#redis配置
+redis:
+  ip: 120.25.65.104
+  password: 123456
+  port: 6379
+  pool:
+    maxIdle: 200
+    maxTotal: 500
+    testOnBorrow: true
+    testOnReturn: true
+    timeout: 3000

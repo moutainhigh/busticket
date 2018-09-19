@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    include:
+    - api
+    - web
+    - swagger
+    - locale
+    - logging
+    - axon-jgroups
+    - axon-amqp
+    - cors
+    - axon-eventstore
+axon:
+  eventstore:
+    aggregate-package: com.vpclub.bait.busticket.command.aggregates
+
+swagger:
+  web-base-package: com.vpclub.bait.busticket.command.controller
+
+
+app:
+  project: bait
+  name: busticket
+  role: command
+  cluster-name: bait

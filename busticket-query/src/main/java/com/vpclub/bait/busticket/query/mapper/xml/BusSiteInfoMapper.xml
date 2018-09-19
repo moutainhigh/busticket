@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vpclub.bait.busticket.query.mapper.BusSiteInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vpclub.bait.busticket.query.entity.BusSiteInfo">
+        <id column="id" property="id"/>
+        <result column="site" property="site"/>
+        <result column="STATIONCODE" property="stationCode"/>
+        <result column="STATUS" property="status"/>
+        <result column="ORIGIN" property="origin"/>
+        <result column="STATIONNAME" property="stationName"/>
+        <result column="itemcode" property="itemCode"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="updated_by" property="updatedBy"/>
+        <result column="updated_time" property="updatedTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID,site,STATIONCODE,STATUS,ORIGIN,STATIONNAME,itemcode,created_by,created_time,updated_by,updated_time,deleted
+    </sql>
+    <select id="querySiteByOrigin" parameterType="string" resultMap="BaseResultMap">
+        select distinct(site) from bus_site_info where origin=#{origin} and status>0
+    </select>
+</mapper>

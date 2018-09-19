@@ -1,0 +1,15 @@
+
+spring:
+  profiles:
+    include:
+    - api
+    - web
+    - swagger
+    - locale
+    - axon-amqp
+    - mybatisplus
+
+mybatis:
+  typeAliasesPackage: "com.vpclub.bait.busticket.query.entity"
+  #checkConfig-location : false
+  mapper-locations: "classpath:com/vpclub/bait/busticket/query/mapper/xml/*Mapper.xml"

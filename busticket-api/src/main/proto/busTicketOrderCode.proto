@@ -1,0 +1,65 @@
+syntax = "proto3";
+import "type.proto";
+
+option java_package = "com.vpclub.bait.busticket.api";
+option java_outer_classname = "BusTicketOrderCodeProto";
+
+message BusTicketOrderCodeDTO {
+
+    //主键
+    Long id = 1;
+    string classCode =2;
+    string site = 3;
+    string stationCode=4;
+    double price=5;
+    Long classDate=6;
+    Integer ticket =7;
+    double serviceAmount=8;
+    double insurAmount=9;
+    string name=10;
+    string mobile=11;
+    string card=12;
+    int32 status=13;
+    string origin=14;
+    string classTime=15;
+    string bookTime=16;
+    double amount=17;
+    string orderCode=18;
+    string seatNo=19;
+    string userId=20;
+    string stationName=21;
+    Long createdBy=22;
+    Long createdTime=23;
+    Long updatedBy=24;
+    Long updatedTime=25;
+    Integer deleted=26;
+
+
+
+
+}
+message BusTicketOrderCodeRequest {
+    string dateTime = 1;
+    string userId = 2;
+    string orderCode = 3;
+    int64 id = 4;
+    int32 status = 5;
+
+}
+message BusTicketOrderCodeResponse {
+    Integer returnCode = 1;
+    string message = 2;
+    BusTicketOrderCodeDTO dataInfo = 3;
+}
+
+service BusTicketOrderCodeRpcService {
+    rpc queryByDateTimeAndUserId (BusTicketOrderCodeRequest) returns (BusTicketOrderCodeResponse) {
+    }
+
+    rpc queryByOrderIdAndUserId (BusTicketOrderCodeRequest) returns (BusTicketOrderCodeResponse) {
+    }
+
+    rpc updateOrderStatus(BusTicketOrderCodeRequest) returns (BusTicketOrderCodeResponse){
+
+    }
+}

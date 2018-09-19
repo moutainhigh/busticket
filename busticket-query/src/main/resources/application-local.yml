@@ -1,0 +1,34 @@
+logging:
+  level:
+    com.vpclub.bait.busticket.query: debug
+
+spring:
+  rabbitmq:
+    host: rabbit-local
+server:
+  port: 8080
+
+app:
+  name: busticket
+  project: bait
+  role: query
+  descriptions: '汽车票查询模块'
+  cluster-name: bait
+  datasource:
+    name: bait_busticket
+    username: root
+    password: HehZqMBdeWNHDjC+o8G1nTu+LRISMw+ZqxA0KDHxvs/L5vyB7JZLXaIsnLAK3nxq+XorhN6IYpLrJVmGovvOuw==
+    druid:
+      public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIuVYJN7qR7bon9yFq7eNWj+4oGTgruh556V9uxryVPPNqj6zNAl3IvU5M/8X7NKG8lDVWDL77ku1aF04UFDA+kCAwEAAQ==
+    host: mysql-local
+#redis配置
+redis:
+  ip: 120.25.65.104
+  password: 123456
+  port: 6379
+  pool:
+    maxIdle: 200
+    maxTotal: 500
+    testOnBorrow: true
+    testOnReturn: true
+    timeout: 3000

@@ -1,0 +1,19 @@
+#app:
+#  bus:
+#    isTest: true
+#    username: test_10086
+#    key: 123456
+#    keyFilepath: /pkcs8_rsa_private_key.pem
+#    desKey: '*&^$%#(&'
+#    host: http://v2.ynpay.cc/api/rest/
+#    session: session
+#    station: bus/station
+#    origin: bus/origin
+#    order: bus/order
+#    classes: bus/class
+#    backUrl: http://rkdev.ynydhlw.com/bait/busticket/bus/insurance/callback
+ynicity:
+  service:
+    serviceId_5: 001481
+    password_5: erkuaiexception
+    url: http://183.224.40.14/SendSmsService/services/SendSms.do

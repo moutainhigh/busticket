@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vpclub.bait.busticket.query.mapper.BusInsuranceInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vpclub.bait.busticket.query.entity.BusInsuranceInfo">
+        <id column="id" property="id"/>
+        <result column="ordercode" property="orderCode"/>
+        <result column="cardno" property="cardNo"/>
+        <result column="mobile" property="mobile"/>
+        <result column="name" property="name"/>
+        <result column="PRICE" property="price"/>
+        <result column="status" property="status"/>
+        <result column="POLICYNO" property="policyNo"/>
+        <result column="COMPANY" property="company"/>
+        <result column="TERMDATE" property="termDate"/>
+        <result column="FROMDATE" property="fromDate"/>
+        <result column="TIME" property="time"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="updated_by" property="updatedBy"/>
+        <result column="updated_time" property="updatedTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,ordercode,cardno,name,mobile,price,POLICYNO,COMPANY,TERMDATE,FROMDATE,status,created_by,created_time,updated_by,updated_time,deleted
+    </sql>
+</mapper>

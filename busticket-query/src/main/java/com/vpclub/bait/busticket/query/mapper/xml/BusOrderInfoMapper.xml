@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vpclub.bait.busticket.query.mapper.BusOrderInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vpclub.bait.busticket.query.entity.BusOrderInfo">
+        <id column="id" property="id"/>
+        <result column="CLASSCODE" property="classCode"/>
+        <result column="site" property="site"/>
+        <result column="STATIONCODE" property="stationCode"/>
+        <result column="PRICE" property="price"/>
+        <result column="CLASSDATE" property="classDate"/>
+        <result column="TICKET" property="ticket"/>
+        <result column="NAME" property="name"/>
+        <result column="MOBILE" property="mobile"/>
+        <result column="CARD" property="card"/>
+        <result column="STATUS" property="status"/>
+        <result column="ORIGIN" property="origin"/>
+        <result column="CLASSTIME" property="classTime"/>
+        <result column="booktime" property="bookTime"/>
+        <result column="AMOUNT" property="amount"/>
+        <result column="ORDERCODE" property="orderCode"/>
+        <result column="SEATNO" property="seatNo"/>
+        <result column="USERID" property="userId"/>
+        <result column="STATIONNAME" property="stationName"/>
+        <result column="serviceAmount" property="serviceAmount"/>
+        <result column="insurAmount" property="insurAmount"/>
+
+        <result column="created_by" property="createdBy"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="updated_by" property="updatedBy"/>
+        <result column="updated_time" property="updatedTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID,CLASSCODE,SITE,STATIONCODE,PRICE,CLASSDATE,TICKET,NAME,MOBILE,CARD,STATUS,ORIGIN,CLASSTIME,BOOKTIME,AMOUNT,ORDERCODE,SEATNO,USERID,STATIONNAME,serviceAmount,insurAmount,created_by,created_time,updated_by,updated_time,deleted
+    </sql>
+
+    <select id="queryOrderCodeAndIdByUserId" resultType="map" parameterType="string">
+        SELECT a.ordercode ORDERCODE FROM bus_order_info a  WHERE (a.status = 3 OR a.booktime >= STR_TO_DATE(#{dateTime}, '%Y-%m-%d %H:%i:%s')) AND a.userid =#{userId} ORDER BY a.created_time DESC
+    </select>
+
+    <select id="queryOrderCodeByOrderIdAndUserId" resultMap="BaseResultMap" parameterType="string">
+        SELECT <include refid="Base_Column_List" />
+        FROM BUS_ORDER_INFO A WHERE a.ORDERCODE=#{orderCode}
+    </select>
+</mapper>

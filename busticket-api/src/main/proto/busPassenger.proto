@@ -1,0 +1,49 @@
+syntax = "proto3";
+import "type.proto";
+
+option java_package = "com.vpclub.bait.busticket.api";
+option java_outer_classname = "BusPassengerProto";
+
+message BusPassengerDTO {
+
+    //主键
+    string site = 1;
+
+}
+message BusPassengerRequest {
+    Integer pageNumber = 1;
+    Integer pageSize = 2;
+    //名称
+    string name = 3;
+    string idNumber = 4;
+    string userId = 5;
+    int32 orderValue = 6;
+    int64 id = 7;
+    int64 createdBy = 8;
+    int64 createdTime = 9;
+    int64 updatedBy = 10;
+    int64 updatedTime = 11;
+    int64 deleted = 12;
+
+}
+message BusPassengerResponse {
+    Integer returnCode = 1;
+    string message = 2;
+    BusPassengerDTO dataInfo = 3;
+}
+
+service BusPassengerRpcService {
+    rpc queryByIdNumber (BusPassengerRequest) returns (BusPassengerResponse) {
+    }
+    rpc queryByUserId (BusPassengerRequest) returns (BusPassengerResponse) {
+    }
+    rpc create (BusPassengerRequest) returns (BusPassengerResponse) {
+    }
+    rpc delete (BusPassengerRequest) returns (BusPassengerResponse) {
+    }
+    rpc update (BusPassengerRequest) returns (BusPassengerResponse) {
+    }
+}
+
+
+

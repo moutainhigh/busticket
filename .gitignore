@@ -1,0 +1,50 @@
+erkuai.iml
+.idea
+.idea/
+.directory
+*.iml
+/.idea
+/.idea/workspace.xml
+/.idea/uiDesigner.xml
+/.idea/dictionaries/
+/out/
+/target/
+/classes/
+# Eclipse specific files/directories
+.classpath
+.project
+.settings
+.metadata
+.recommenders
+
+# Build output directies
+/target
+*/target
+/work
+*/work
+var
+logs
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.err
